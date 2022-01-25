@@ -1,46 +1,74 @@
-# Getting Started with Create React App
+# 설치!!
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Typescript 설치
 
-## Available Scripts
+(기존 Create React App으로 만든 프로젝트에 타입스크립트 설치)
+npm install --save typescript @types/node @types/react @types/react-dom @types/jest
 
-In the project directory, you can run:
+Create React App을 타입스크립트로 시작하기
 
-### `npm start`
+npx create-react-app my-app --template typescript 또는
+You are running `create-react-app` 4.0.3, which is behind the latest release (5.0.0). 오류가 뜬다면 아래 명령어로 진행
+npx create-react-app@5.0.0 my-app --template typescript
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+https://create-react-app.dev/docs/adding-typescript
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Styled-Component 설치 (typeScript 용)
+npm install --save @types/styled-components
 
-### `npm test`
+react router, react query 설치
+npm i react-router-dom react-query
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+리액트 쿼리 설치
+npm i react-query
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+리액트 그래프 차트 설치
+npm install --save react-apexcharts apexcharts
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+리액트 헬멧 설치 HTML 의 TITLE 값을 변경해줌
+npm i react-helmet
+npm i --save-dev @types/react-helmet
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+리엑트 recoil 설치 : 최상단 APP의 state 값을 최하단 컴포넌트에서 사용시
+연결되어 있는 컴포넌트로 무한정 넘겨줘야 하는 이슈가 발생.
+recoil 설치시 버블 형태로 띄워놓고 useState처럼 자연스럽게 사용 할 수 있음.
 
-### `npm run eject`
+npm install recoil
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+react-beautiful-dnd 설치
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+npm i react-beautiful-dnd
+npm i --save-dev @types/react-beautiful-dnd
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+https://www.npmjs.com/package/react-beautiful-dnd
+https://github.com/atlassian/react-beautiful-dnd/blob/master/docs/about/installation.md
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+react-beautiful-dnd 테스트해 보기
+https://react-beautiful-dnd.netlify.app/iframe.html?id=board--simple
 
-## Learn More
+react-beautiful-dnd 예시 코드
+https://codesandbox.io/s/k260nyxq9v
+# -------------------------------------------------------------------------
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+색상 선택 page 
+https://flatuicolors.com/palette/gb
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+
+코인 API 
+https://api.coinpaprika.com/v1/coins
+
+코인 로고 API
+https://cryptoicon-api.vercel.app/api/icon/btc
+
+React APEX CHARTS Doc
+https://apexcharts.com/docs/react-charts
+
+----------------------------------------------------------
+코드 챌린지
+
+- 스타일 꾸미기
+- 작성한 모든 투두를 localStorage에 저장 및 로드하기
+- 투두 삭제하기
+- 보드 생성하기
+- 보드끼리도 순서 바꾸기
