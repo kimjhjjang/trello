@@ -1,10 +1,10 @@
 import { Draggable, Droppable } from "react-beautiful-dnd";
 import { useForm } from "react-hook-form";
-import { useRecoilState } from "recoil";
+import { useSetRecoilState } from "recoil";
 import styled, {keyframes} from "styled-components";
 import { ITodo, todoState } from "../atoms";
 import DraggableCard from "./DraggableCard";
-import React, { useEffect } from "react";
+import React from "react";
 import { saveTodos } from "../LocalStorage/LocalStorage";
 
 // animations
@@ -92,11 +92,11 @@ interface IForm {
 
 
 function Board ({toDos,boardId,index}:IBoardProps) {
-    const [todos, setToDos] = useRecoilState(todoState);
+    const setToDos = useSetRecoilState(todoState);
     const {register, handleSubmit, setValue} = useForm<IForm>();
 
     const deleteBoard = (event: React.MouseEvent<HTMLButtonElement>) => {
-        const { currentTarget: { value , name} } = event;
+        const { currentTarget: { value} } = event;
         setToDos((allBoards) => {
             const todosBoard = { ...allBoards };
             delete todosBoard[value];
@@ -104,9 +104,6 @@ function Board ({toDos,boardId,index}:IBoardProps) {
             return todosBoard;
         });
         
-      /*  let data = Object.keys(todos);
-       delete data[Number(name)];
-       console.log(data.length); */
     }
     
     const onValid = ({toDo}:IForm) =>{
@@ -140,7 +137,7 @@ function Board ({toDos,boardId,index}:IBoardProps) {
                 >
                     <TitleBox>
                         <Title>{boardId}</Title>
-                        <Button value={boardId} name={index+""} onClick={deleteBoard}>❌</Button>
+                        <Button value={boardId} onClick={deleteBoard}>❌</Button>
                     </TitleBox>
                     <Form onSubmit={handleSubmit(onValid)}>
                         <input {...register("toDo", { required: true })} type="text" placeholder={`Add ${boardId}`} />
